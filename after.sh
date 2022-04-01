@@ -6,7 +6,7 @@ sudo -i
 # Update packages
 apt-get update
 
-# Install ZScaler Root CA Cert if Zscaler is installed on your windows dev machine. If not you will get cert errors when installing composer.
+# Install ZScaler Root CA Cert if Zscaler is installed on your windows dev machine. If not, you will get cert errors when installing composer.
 cat << EOF > /usr/local/share/ca-certificates/zscalercert.crt
 -----BEGIN CERTIFICATE-----
 MIIE0zCCA7ugAwIBAgIJANu+mC2Jt3uTMA0GCSqGSIb3DQEBCwUAMIGhMQswCQYD
@@ -139,6 +139,9 @@ mysql -e "$query"
 mysql -e "flush privileges"
 
 service nginx restart
+
+
+
 
 # Run company specific setup script not included in repo if file exists
 FILE=/opt/php-juniper-mist-management/etc/after.sh
